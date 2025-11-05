@@ -3,7 +3,6 @@ package com.smartpark.parkingmanagementsystem.controller;
 import com.smartpark.parkingmanagementsystem.dto.CreateParkingLotDTO;
 import com.smartpark.parkingmanagementsystem.dto.ResponseParkingAvailabilityDTO;
 import com.smartpark.parkingmanagementsystem.dto.ResponseParkingLotDTO;
-import com.smartpark.parkingmanagementsystem.entity.ParkingLot;
 import com.smartpark.parkingmanagementsystem.service.ParkingLotService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

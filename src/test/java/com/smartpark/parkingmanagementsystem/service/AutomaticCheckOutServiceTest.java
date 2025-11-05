@@ -5,7 +5,6 @@ import com.smartpark.parkingmanagementsystem.entity.Vehicle;
 import com.smartpark.parkingmanagementsystem.enums.VehicleType;
 import com.smartpark.parkingmanagementsystem.repository.VehicleRepository;
 import com.smartpark.parkingmanagementsystem.service.impl.AutomaticCheckOutServiceImpl;
-import com.smartpark.parkingmanagementsystem.service.impl.VehicleServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

@@ -42,6 +42,10 @@ public class ErrorConstants {
 
         ERRORS.put("PFL001", "Full Parking");
 
+        ERRORS.put("USR001","User not found");
+
+        ERRORS.put("LGN001","Invalid username or password");
+
 
         // Generic errors
         ERRORS.put("INTERNAL_ERROR", "An unexpected error occurred");

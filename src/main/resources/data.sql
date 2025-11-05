@@ -1,5 +1,6 @@
 DELETE FROM vehicles;
 DELETE FROM parking_lots;
+DELETE FROM users;
 
 INSERT INTO parking_lots (lot_id, location, capacity, cost_per_minute)
 VALUES
@@ -11,3 +12,7 @@ VALUES
 ('ABC-123', 'CAR', 'Jose Jackson' ),
 ('DEF-456', 'MOTORCYCLE', 'Alex Cruz' ),
 ('GHI-789', 'TRUCK', 'Maria Santos' );
+
+INSERT INTO users (usr_username, usr_password )
+VALUES
+('smartpark', 'Hitachi@12345' );

@@ -1,7 +1,5 @@
 package com.smartpark.parkingmanagementsystem.dto;
 
-import com.smartpark.parkingmanagementsystem.entity.Vehicle;
-import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

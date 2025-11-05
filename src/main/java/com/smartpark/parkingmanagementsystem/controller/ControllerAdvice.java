@@ -13,10 +13,8 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import java.util.HashMap;
-
 @Slf4j
-@RestControllerAdvice(assignableTypes = {ParkingLotController.class, VehicleController.class})
+@RestControllerAdvice(assignableTypes = {ParkingLotController.class, VehicleController.class, UserController.class})
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class ControllerAdvice {
 
