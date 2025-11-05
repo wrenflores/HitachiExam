@@ -1,0 +1,18 @@
+package com.smartpark.parkingmanagementsystem.dto;
+
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class ResponseParkingAvailabilityDTO {
+
+    private int availableSpaces;
+    private int occupiedSpaces;
+    private int capacity;
+}
