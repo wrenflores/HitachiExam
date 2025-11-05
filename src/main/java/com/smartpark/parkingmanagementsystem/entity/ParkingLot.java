@@ -45,17 +45,4 @@ public class ParkingLot {
     public boolean isFull() {
         return getOccupiedSpaces() >= capacity;
     }
-
-    public void addVehicle(Vehicle vehicle) {
-        if (isFull()) {
-            throw new IllegalStateException("Parking lot is full");
-        }
-        vehicle.setParkingLot(this);
-        vehicles.add(vehicle);
-    }
-
-    public void removeVehicle(Vehicle vehicle) {
-        vehicles.remove(vehicle);
-        vehicle.setParkingLot(null);
-    }
 }

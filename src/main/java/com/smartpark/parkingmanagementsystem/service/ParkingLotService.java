@@ -12,7 +12,7 @@ public interface ParkingLotService {
 
     Page<ResponseParkingLotDTO> getAllParkingLots(Pageable pageable);
 
-    ResponseParkingLotDTO createParkingLot(CreateParkingLotDTO createParkingLotDTO);
+    CreateParkingLotDTO createParkingLot(CreateParkingLotDTO createParkingLotDTO);
 
     ResponseParkingAvailabilityDTO getParkingLotAvailability(String parkingLotId);
 

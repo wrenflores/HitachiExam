@@ -8,6 +8,7 @@ public class ErrorConstants {
     // Map of all error codes and their default messages
     public static final Map<String, String> ERRORS;
 
+
     static {
         ERRORS = new HashMap<>();
 
@@ -25,7 +26,22 @@ public class ErrorConstants {
 
 
         // Parking lot errors
-        ERRORS.put("PNF001", "ParkingLot not found");
+        ERRORS.put("PID001", "ParkingLot %s already exists");
+        ERRORS.put("PID002", "ParkingLot not found");
+
+        ERRORS.put("VVC001", "License plate can only contain letters, numbers, and dashes");
+        ERRORS.put("VVC002", "Owner name not blank");
+        ERRORS.put("VVC003", "Owner name can only contain letters and spaces");
+        ERRORS.put("VVC004", "Invalid vehicle type");
+        ERRORS.put("VVC005", "Invalid vehicle type. Allowed values: CAR, MOTORCYCLE, TRUCK.");
+
+        ERRORS.put("VID001", "Vehicle %s already exists");
+        ERRORS.put("VID002", "Vehicle not found");
+        ERRORS.put("VCI001", "Vehicle has no active check-in record or assigned parking lot.");
+
+
+        ERRORS.put("PFL001", "Full Parking");
+
 
         // Generic errors
         ERRORS.put("INTERNAL_ERROR", "An unexpected error occurred");

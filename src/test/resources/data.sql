@@ -11,3 +11,5 @@ VALUES
 ('ABC-123', 'CAR', 'Jose Jackson' ),
 ('DEF-456', 'MOTORCYCLE', 'Alex Cruz' ),
 ('GHI-789', 'TRUCK', 'Maria Santos' );
+
+

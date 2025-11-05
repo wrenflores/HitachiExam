@@ -35,7 +35,7 @@ public class ParkingLotController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<ResponseParkingLotDTO> registerParkingLot(@Valid @RequestBody CreateParkingLotDTO  createParkingLotDTO){
+    public ResponseEntity<CreateParkingLotDTO> registerParkingLot(@Valid @RequestBody CreateParkingLotDTO  createParkingLotDTO){
         return ResponseEntity.ok(parkingLotService.createParkingLot(createParkingLotDTO));
     }
     

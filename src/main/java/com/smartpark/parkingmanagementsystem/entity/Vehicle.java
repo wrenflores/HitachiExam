@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "vehicles")
 @Data
@@ -29,7 +31,13 @@ public class Vehicle {
     private String ownerName;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "lot_id", nullable = true)
+    @JoinColumn(name = "lot_id")
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private ParkingLot parkingLot;
+
+    @Column(name = "parked_in")
+    private LocalDateTime checkInTime;
+
 }
 

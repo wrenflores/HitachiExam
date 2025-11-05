@@ -14,7 +14,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
 
 @Service
 public class ParkingLotServiceImpl implements ParkingLotService {
@@ -36,23 +35,23 @@ public class ParkingLotServiceImpl implements ParkingLotService {
     }
 
     @Override
-    public ResponseParkingLotDTO createParkingLot(CreateParkingLotDTO createParkingLotDTO) {
+    public CreateParkingLotDTO createParkingLot(CreateParkingLotDTO createParkingLotDTO) {
 
         if (lotRepository.existsById(createParkingLotDTO.getLotId())) {
             throw new GenericException("PID001",
-                    "ParkingLot with ID " + createParkingLotDTO.getLotId() + " already exists"
+                    ErrorConstants.getMessage("PID001").formatted(createParkingLotDTO.getLotId())
             );
         }
 
 
         ParkingLot parkingLot = modelMapper.map(createParkingLotDTO, ParkingLot.class);
-        return modelMapper.map(lotRepository.save(parkingLot), ResponseParkingLotDTO.class);
+        return modelMapper.map(lotRepository.save(parkingLot), CreateParkingLotDTO.class);
     }
 
     @Override
     public ResponseParkingAvailabilityDTO getParkingLotAvailability(String parkingLotId) {
         ParkingLot parkingLot = lotRepository.findById(parkingLotId).orElseThrow(
-                () -> new GenericException("PNF001",ErrorConstants.getMessage("PNF001"))
+                () -> new GenericException("PID002",ErrorConstants.getMessage("PID002"))
         );
         return ResponseParkingAvailabilityDTO.builder()
                 .capacity(parkingLot.getCapacity())
@@ -65,7 +64,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
     public ResponseParkingLotDTO getParkingLot(String parkinglotId) {
         return modelMapper.map(
                 lotRepository.findById(parkinglotId).orElseThrow(
-                () -> new GenericException("PNF001",ErrorConstants.getMessage("PNF001"))
+                () -> new GenericException("PID002",ErrorConstants.getMessage("PID002"))
         ), ResponseParkingLotDTO.class);
     }
 }
