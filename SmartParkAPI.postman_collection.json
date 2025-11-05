@@ -1,0 +1,314 @@
+{
+	"info": {
+		"_postman_id": "596bb0a0-16a4-48c2-a8a6-0652ccaf6005",
+		"name": "SmartParkAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13259019"
+	},
+	"item": [
+		{
+			"name": "getAllParkingLots",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzbWFydHBhcmsiLCJpYXQiOjE3NjIzNzUzMzYsImV4cCI6MTc2MjM3ODkzNn0.9tv9vmOdq3WKaHeI-F8_cB0SdkVw_TcBbKtFQxarxxw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/parkinglot/allparkinglots?page=0&size=5&sort=location,asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"parkinglot",
+						"allparkinglots"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						},
+						{
+							"key": "sort",
+							"value": "location,asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registerParkingLot",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzbWFydHBhcmsiLCJpYXQiOjE3NjIzNjk5MjAsImV4cCI6MTc2MjM3MzUyMH0.YGUQLac4yZGibcNCFRN5BxG6lAws2POtUVQaxk-7kD8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"lotId\": \"LOT-003\",\n    \"location\": \"Robinson Parking\",\n    \"capacity\": 1,\n    \"costPerMinute\": 5\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/parkinglot/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"parkinglot",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registerVehicle",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzbWFydHBhcmsiLCJpYXQiOjE3NjIzNjk5MjAsImV4cCI6MTc2MjM3MzUyMH0.YGUQLac4yZGibcNCFRN5BxG6lAws2POtUVQaxk-7kD8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"licensePlate\": \"VBG214\",\n    \"ownerName\": \"Joselito\",\n    \"type\": \"CAR\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/vehicle/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"vehicle",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "availableParkingLot",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzbWFydHBhcmsiLCJpYXQiOjE3NjIzNjk5MjAsImV4cCI6MTc2MjM3MzUyMH0.YGUQLac4yZGibcNCFRN5BxG6lAws2POtUVQaxk-7kD8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/parkinglot/availableparkinglots/LOT-001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"parkinglot",
+						"availableparkinglots",
+						"LOT-001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getParkingLot",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzbWFydHBhcmsiLCJpYXQiOjE3NjIzNjk5MjAsImV4cCI6MTc2MjM3MzUyMH0.YGUQLac4yZGibcNCFRN5BxG6lAws2POtUVQaxk-7kD8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/parkinglot/LOT-003",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"parkinglot",
+						"LOT-003"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "checkInVehicle",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzbWFydHBhcmsiLCJpYXQiOjE3NjIzNjk5MjAsImV4cCI6MTc2MjM3MzUyMH0.YGUQLac4yZGibcNCFRN5BxG6lAws2POtUVQaxk-7kD8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/vehicle/checkin/VBG214?lotId=LOT-001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"vehicle",
+						"checkin",
+						"VBG214"
+					],
+					"query": [
+						{
+							"key": "lotId",
+							"value": "LOT-001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "checkOutVehicle",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzbWFydHBhcmsiLCJpYXQiOjE3NjIzNjk5MjAsImV4cCI6MTc2MjM3MzUyMH0.YGUQLac4yZGibcNCFRN5BxG6lAws2POtUVQaxk-7kD8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/vehicle/checkout/VBG213",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"vehicle",
+						"checkout",
+						"VBG213"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"smartpark\",\n    \"password\": \"Hitachi@12345\"\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
